@@ -16,12 +16,11 @@ const HeroSection = ({ myData }) => {
             <p className="intro-data">Welcome to </p>
             <h1> {name} </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              atque temporibus veniam doloribus libero ad error omnis voluptates
-              animi! Suscipit sapiente.
+              Welcome to Mega Store, your ultimate destination for premium products. Discover a world
+               of convenience and quality as you shop for the finest items online.
             </p>
             <NavLink>
-              <Button>show now</Button>
+              <Button>shop now</Button>
             </NavLink>
           </div>
           {/* our homepage image  */}
