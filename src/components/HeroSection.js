@@ -5,7 +5,6 @@ import { Button } from "../styles/Button";
 const HeroSection = ({ myData }) => {
   const { name } = myData;
   // ctrl + alt + / for this below style automatic comment
-  console.log("🚀 ~ file: HeroSection.js:7 ~ HeroSection ~ myData:", myData)
 
 
   return (
