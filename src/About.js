@@ -59,7 +59,7 @@ const Wrapper = styled.section`
   .hero-section-data {
     p {
       margin: 2rem 0;
-      background-color: #F6F8FA;
+      background-color: ${({ theme }) => theme.colors.bg};
       padding: 4rem 4rem;
       border-radius: 1rem;
     }
@@ -67,7 +67,7 @@ const Wrapper = styled.section`
     h1 {
       font-weight: bold;
       margin-top: 7rem;
-      color: rgb(98 84 243);
+      color: ${({ theme }) => theme.colors.btn};
     }
 
     .intro-data {
