@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Button } from "../styles/Button";
-import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -42,10 +42,14 @@ const Footer = () => {
               <h3>Follow Us</h3>
               <div className="footer-social--icons">
                 <div>
-                  <FaDiscord className="icons" />
+                  <a href="https://www.github.com/dev-osiris">
+                    <FaGithub className="icons" />
+                  </a>
                 </div>
                 <div>
-                  <FaInstagram className="icons" />
+                  <a href="https://www.linkedin.com/in/liveshkumar">
+                    <FaLinkedin className="icons" />
+                  </a>
                 </div>
                 <div>
                   <a
