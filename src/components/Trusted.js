@@ -45,7 +45,7 @@ const Trusted = () => {
 
 const Wrapper = styled.section`
   padding: 9rem 0;
-  background-color: ${({ theme }) => theme.colors.bg};
+  
 
   .brand-section {
     padding: 12rem 0 0 0;
@@ -69,6 +69,8 @@ const Wrapper = styled.section`
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    background-color: ${({ theme }) => theme.colors.trusted_company_bg_clr};
+    border-radius: 2rem;
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {

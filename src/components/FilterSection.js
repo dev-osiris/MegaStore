@@ -173,18 +173,18 @@ const Wrapper = styled.section`
 
       button {
         border: none;
-        background-color: ${({ theme }) => theme.colors.white};
         text-transform: capitalize;
         cursor: pointer;
-
+        background-color: transparent;
         &:hover {
-          color: ${({ theme }) => theme.colors.btn};
+          color: ${({theme}) => theme.colors.category_bg_clr};
         }
       }
 
       .active {
         border-bottom: 1px solid #000;
         color: ${({ theme }) => theme.colors.btn};
+          color: #c8d6e5;
       }
     }
   }

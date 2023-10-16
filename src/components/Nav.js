@@ -3,11 +3,15 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
+import { BsSun, BsFillMoonFill } from "react-icons/bs";
 import { useCartContext } from "../context/cart_context";
+import { useThemeContext } from "../context/theme_context";
 
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
   const { total_item } = useCartContext();
+
+  const { setCurrTheme, currTheme, light_theme, dark_theme } = useThemeContext();
 
   const Nav = styled.nav`
     .navbar-lists {
@@ -23,7 +27,7 @@ const Nav = () => {
           font-size: 1.8rem;
           font-weight: 500;
           text-transform: uppercase;
-          color: ${({ theme }) => theme.colors.black};
+          color: ${({ theme }) => theme.colors.nav_links};
           transition: color 0.3s linear;
         }
 
@@ -31,7 +35,29 @@ const Nav = () => {
         &:active {
           color: ${({ theme }) => theme.colors.helper};
         }
+
       }
+
+      .theme-icon{
+        font-size: 2.5rem;
+        
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      
+      .sun{
+        color: crimson;
+      }
+
+      .moon{
+        color: black;
+      }
+
+      .hide{
+        display: none;
+      }
+
     }
 
     .mobile-navbar-btn {
@@ -62,7 +88,7 @@ const Nav = () => {
         height: 2.4rem;
         position: absolute;
         background-color: #000;
-        color: #000;
+        color: ${({ theme }) => theme.colors.cart_total_icon_clr};
         border-radius: 50%;
         display: grid;
         place-items: center;
@@ -152,6 +178,7 @@ const Nav = () => {
           width: 4.2rem;
           height: 4.2rem;
           font-size: 2rem;
+          color: ${({ theme }) => theme.colors.cart_total_icon_clr};
         }
       }
 
@@ -163,14 +190,31 @@ const Nav = () => {
     }
   `;
 
+const changeTheme = () => {
+  const newTheme = (currTheme === light_theme) ? dark_theme : light_theme;
+  setCurrTheme(newTheme); 
+}
+
+
   return (
     <Nav>
       <div className={menuIcon ? "navbar active" : "navbar"}>
         <ul className="navbar-lists">
           <li>
+            <BsSun
+              onClick={() => changeTheme()}
+              className={(currTheme === light_theme) ? "hide" : "theme-icon sun"}
+            ></BsSun>
+
+            <BsFillMoonFill
+              onClick={() => changeTheme()}
+              className={(currTheme === dark_theme) ? "hide" : "theme-icon moon"}
+            ></BsFillMoonFill>
+          </li>
+          <li>
             <NavLink
               to="/"
-              className="navbar-link "
+              className="navbar-link"
               onClick={() => setMenuIcon(false)}>
               Home
             </NavLink>

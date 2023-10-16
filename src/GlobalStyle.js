@@ -20,6 +20,11 @@ body {
   overflow-x: hidden;
   scrollbar-color: rgb(98 84 243);
   scrollbar-width: thin;
+  background-color: ${({ theme }) => theme.colors.main_bg_clr};
+}
+
+input, select{
+  background-color: ${({ theme }) => theme.colors.input_select_bg_clr};
 }
 
 body::-webkit-scrollbar {
@@ -119,7 +124,7 @@ ${"" /* resuable code section  */}
 .intro-data {
   margin-bottom: 0;
   text-transform: uppercase;
-  color: #5138ee;
+  color: ${({ theme }) => theme.colors.intro_data_clr};
 }
 
 .caption {
